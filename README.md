@@ -1,8 +1,8 @@
-##FlexGet-qBit-Sync-Tool
+###FlexGet-qBit-Sync-Tool
 这是一个轻量级的 Windows 自动化脚本，旨在无缝集成 FlexGet 与 qBittorrent 的生命周期管理 。通过 VBScript 实现后台静默运行，解决常见的程序多开锁定问题，并确保下载器与订阅工具同步开关 。
 +2
 
-#📋 环境要求
+##📋 环境要求
 在开始之前，请确保你的系统中已安装：
 
 Python & FlexGet：建议安装在 Anaconda 环境或系统全局环境中 。
@@ -12,7 +12,7 @@ qBittorrent：需要开启 Web UI（默认端口 8080），以便 FlexGet 推送
 
 Windows 操作系统：支持运行 .vbs 脚本。
 
-#🚀 快速上手
+##🚀 快速上手
 1. 配置 FlexGet
 将 config.yml 放入你的 FlexGet 配置文件夹（默认通常为 C:\Users\YourName\.flexget\） 。
 
@@ -33,13 +33,13 @@ WshShell.Run """此处改为qbittorrent.exe的路径""", 0, False
 3. 运行
 双击 rss_anime.vbs。你会发现 qBittorrent 正常启动，而 FlexGet 已在后台静默运行并开始执行每 3 小时一次的扫描任务 。
 
-#📂 文件结构
+##📂 文件结构
 
 rss_anime.vbs: 主逻辑脚本，负责进程控制、锁定清理及生命周期监控 。
 
 config.yml: FlexGet 配置文件，包含 RSS 订阅源及下载路径策略 。
 
-#🌟 核心特性
+##🌟 核心特性
 
 静默后台运行：使用 WshShell.Run 的隐藏参数，彻底消除黑色 CMD 窗口弹出，实现真正的无感自动化 。
 

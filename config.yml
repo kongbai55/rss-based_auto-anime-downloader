@@ -1,0 +1,21 @@
+schedules:
+  - tasks: '*'
+    interval:
+      hours: 3
+
+templates:
+  qbit_rss:
+    set:
+      #D:/anime为番剧下载的根目录，可以随意更换
+      path: "D:/anime/{{ now.strftime('%y') }}.{{ '%02d' | format((now.month - 1) // 3 * 3 + 1) }}/{{ task }}"
+    accept_all: yes
+    qbittorrent:
+      host: localhost
+      port: 8080
+      username: qbit webui的用户名
+      password: "qbit webui的密码"
+
+tasks:
+  芙莉莲2:
+    template: qbit_rss
+    rss: "https://mikanani.kas.pub/RSS/Search?searchstr=%5BANi%5D+Sousou+no+Frieren+S02"

@@ -12,7 +12,7 @@ templates:
     qbittorrent:
       host: localhost
       port: 8080
-      username: qbit webui的用户名
+      username: "qbit webui的用户名"
       password: "qbit webui的密码"
 
 tasks:
